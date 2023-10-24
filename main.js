@@ -26,6 +26,10 @@ function pedirDatosAlUsuario(){
 
      if(nombre === null){
         break;
+
+     }else if (nombre === ""){
+      alert("Debe ingresar un nombre para iniciar el registro")
+      break;
      }
 
      const edadInput = prompt("Ingrese su edad para el registro");
@@ -62,7 +66,7 @@ function pedirDatosAlUsuario(){
      }
 
      const dineroGastado = Number(inputDineroGastado)
-     
+
      if(isNaN(dineroGastado)){
         alert("el numero del dinero abonado no es correcta,por favor intentelo de nuevo")
         break;
