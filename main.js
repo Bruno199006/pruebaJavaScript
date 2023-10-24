@@ -36,6 +36,10 @@ function pedirDatosAlUsuario(){
 
      if (edadInput === null) {
        break; 
+     }else if (edadInput === ""){
+
+      alert("debe ingresar un valor para poder continuar con el registro");
+      break;
      }
      
      const edad = Number(edadInput);
@@ -43,6 +47,9 @@ function pedirDatosAlUsuario(){
      if (isNaN(edad)) {
        alert("El número de edad no es un número válido, por favor inténtelo de nuevo");
        break; 
+     }else if (edad < 18){
+      alert("Debes ser mayor de edad para poder registrarte");
+      break;
      }
    
 
@@ -56,6 +63,9 @@ function pedirDatosAlUsuario(){
      if(isNaN(altura)){
         alert("la medida de estatura no es valida,por favor intentar de nuevo")
         break;
+     }else if (altura === 0){
+      alert("Debes ingresar un valor para poder seguir con el registro")
+      break;
      }
 
 
@@ -70,6 +80,9 @@ function pedirDatosAlUsuario(){
      if(isNaN(dineroGastado)){
         alert("el numero del dinero abonado no es correcta,por favor intentelo de nuevo")
         break;
+     }else if (dineroGastado === 0){
+      alert("Debes ingresar un monto para poder completar el registro");
+      break;
      }
      
      ingresarPersona(nombre, edad, altura, dineroGastado);
