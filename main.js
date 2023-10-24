@@ -22,27 +22,52 @@ function ingresarPersona(nombre, edad, altura, dineroGastado){
 function pedirDatosAlUsuario(){
     while(true){
 
-     const nombre = prompt("ingrese su nombre para el registro (DEJE EN BLANCO PARA SALIR)")
+     const nombre = prompt("ingrese su nombre para el registro (oprima cancelar para salir)")
 
-     if(nombre === ""){
+     if(nombre === null){
         break;
      }
-     const edad = Number(prompt("Ingrese su edad para el registro"))
 
-     if(isNaN(edad)){
-        alert("la entrada de edad no es valida,por favor intentalo de nuevo")
-        continue;
+     const edadInput = prompt("Ingrese su edad para el registro");
+
+     if (edadInput === null) {
+       break; 
      }
-     const altura = Number(prompt("ingrese su estatura para el registro"))
+     
+     const edad = Number(edadInput);
+     
+     if (isNaN(edad)) {
+       alert("El número de edad no es un número válido, por favor inténtelo de nuevo");
+       break; 
+     }
+   
+
+     const alturaInput = prompt("ingrese su estatura para el registro");
+
+      if(alturaInput === null){
+         break;
+      }
+      
+     const altura = Number(alturaInput)
      if(isNaN(altura)){
-        alert("la entrada de estatura no es valida,por favor intentar de nuevo")
-        continue;
+        alert("la medida de estatura no es valida,por favor intentar de nuevo")
+        break;
      }
-     const dineroGastado = Number(prompt("Ingrese el monto abonado en la discoteca"))
+
+
+     const inputDineroGastado = prompt("Ingrese el monto abonado en la discoteca")
+
+     if(inputDineroGastado === null){
+      break;
+     }
+
+     const dineroGastado = Number(inputDineroGastado)
+     
      if(isNaN(dineroGastado)){
-        alert("la entrada del dinero abonado no es correcta,por favor intentelo de nuevo")
-        continue;
+        alert("el numero del dinero abonado no es correcta,por favor intentelo de nuevo")
+        break;
      }
+     
      ingresarPersona(nombre, edad, altura, dineroGastado);
 
     console.log("nueva persona agregada al array")
