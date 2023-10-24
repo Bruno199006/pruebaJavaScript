@@ -66,7 +66,7 @@ function pedirDatosAlUsuario(){
      const altura = Number(alturaInput)
      if(isNaN(altura)){
         alert("la medida de estatura no es valida,por favor intentar de nuevo")
-        break;
+      continue;
      }else if (altura === 0){
       alert("Debes ingresar un valor para poder seguir con el registro")
       continue;
@@ -83,7 +83,7 @@ function pedirDatosAlUsuario(){
 
      if(isNaN(dineroGastado)){
         alert("el numero del dinero abonado no es correcta,por favor intentelo de nuevo")
-        break;
+        continue;
      }else if (dineroGastado === 0){
       alert("Debes ingresar un monto para poder completar el registro");
       continue;
