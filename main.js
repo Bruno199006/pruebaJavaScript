@@ -27,9 +27,13 @@ function pedirDatosAlUsuario(){
      if(nombre === null){
         break;
 
-     }else if (nombre === ""){
+     }else if (nombre === "" ){
       alert("Debe ingresar un nombre para iniciar el registro")
-      break;
+      continue;
+
+     }else if(!isNaN(nombre)){
+      alert("El nombre no puede ser un numero")
+      continue;
      }
 
      const edadInput = prompt("Ingrese su edad para el registro");
@@ -39,7 +43,7 @@ function pedirDatosAlUsuario(){
      }else if (edadInput === ""){
 
       alert("debe ingresar un valor para poder continuar con el registro");
-      break;
+      continue;
      }
      
      const edad = Number(edadInput);
@@ -49,7 +53,7 @@ function pedirDatosAlUsuario(){
        break; 
      }else if (edad < 18){
       alert("Debes ser mayor de edad para poder registrarte");
-      break;
+      continue;
      }
    
 
@@ -65,7 +69,7 @@ function pedirDatosAlUsuario(){
         break;
      }else if (altura === 0){
       alert("Debes ingresar un valor para poder seguir con el registro")
-      break;
+      continue;
      }
 
 
@@ -82,7 +86,7 @@ function pedirDatosAlUsuario(){
         break;
      }else if (dineroGastado === 0){
       alert("Debes ingresar un monto para poder completar el registro");
-      break;
+      continue;
      }
      
      ingresarPersona(nombre, edad, altura, dineroGastado);
@@ -98,6 +102,6 @@ pedirDatosAlUsuario();
 
 const sumaDineroGastado = personasEnlaDiscoteca.reduce((total, persona) => total + persona.dineroGastado, 0);
 
-console.log("El dinero total gastado por las personas en la discoteca es de : ", sumaDineroGastado);
-
 console.log(personasEnlaDiscoteca);
+
+console.log("El dinero total gastado por las personas en la discoteca es de : ", sumaDineroGastado);
