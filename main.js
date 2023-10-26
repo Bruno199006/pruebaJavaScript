@@ -50,7 +50,7 @@ function pedirDatosAlUsuario(){
      
      if (isNaN(edad)) {
        alert("El número de edad no es un número válido, por favor inténtelo de nuevo");
-       break; 
+       continue; 
      }else if (edad < 18){
       alert("Debes ser mayor de edad para poder registrarte");
       continue;
